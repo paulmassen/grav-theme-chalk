@@ -1,0 +1,76 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+    {% if theme_config.blog_theme == "light" %}
+        {% do assets.addCss('theme://css-compiled/light.css', 98) %}
+    {% else %}
+        {% do assets.addCss('theme://css-compiled/dark.css', 98) %}
+    {% endif %}
+        
+    {% endblock %}
+    {{ assets.css() }}
+
+{% endblock head%}
+</head>
+<body {% if page.header.body_classes %}class="{{ page.header.body_classes }}" {% endif %}>
+
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        {% include 'partials/navigation.html.twig' %}
+          <section id="body">
+        <div class="wrapper padding">
+        {% block content %}{% endblock %}
+        </div>
+    </section>
+
+        {% block footer %}
+ <footer class="footer {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
+  <p>
+    Chalk is a high quality, completely customizable, performant and 100% free
+    blog template for Jekyll built by
+    <a href="{{ 'about' | relative_url }}" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>.
+  </p>
+</footer>
+
+{% endblock %}
+      </div>
+    </div>
+  </main>
+  
+
+{% block javascripts %}
+{% if theme_config.ga_analytics %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.ga_analytics }}');
+  </script>
+{% endif %}
+   
+    {% do assets.addJs('theme://js/vendor.js', 103) %}
+    {% do assets.addJs('theme://js/webfont.js', 102) %}
+     {% if theme_config.scrollappear_enabled %}
+    {% do assets.addJs('theme://js/scrollappear.js', 103) %}
+    {% endif %}
+    {% do assets.addJs('theme://js/application.js', 100) %}
+{% endblock %}
+{{ assets.js() }}
+
+</body>
+</html>

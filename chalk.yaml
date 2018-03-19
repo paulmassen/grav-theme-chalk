@@ -1,0 +1,4 @@
+enabled: true
+# blog_theme: light
+dropdown:
+  enabled: true
