@@ -1,8 +1,5 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-{% set myvar = "<div><pre><code>Some complicated code here</code></pre></div>" %}
-    {#{{ myvar|regex_replace("/<pre>(.*?)<\/pre>/", "<figure class="highlight"><pre>$1</pre></figure>") }}#}
-    
-   {{ myvar|replace({'<pre>':'<figure class="highlight"><pre>', '</pre>': '</pre></figure>'}) }}
+   {{ page.content|replace({'<pre>':'<figure class="highlight"><pre>', '</pre>': '</pre></figure>'}) }}
 {% endblock %}

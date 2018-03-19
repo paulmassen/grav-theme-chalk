@@ -14,6 +14,7 @@
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% block stylesheets %}
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Lato" rel="stylesheet">
     {% if theme_config.blog_theme == "light" %}
         {% do assets.addCss('theme://css-compiled/light.css', 98) %}
     {% else %}

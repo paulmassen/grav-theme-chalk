@@ -25,3 +25,81 @@ form:
           0: PLUGIN_ADMIN.DISABLED
         validate:
           type: bool
+    blog_theme:
+        type: toggle
+        label: Blog Theme
+        default: light
+        options:
+          dark: Dark Theme
+          light: Light Theme
+
+    social_twitter:
+        type: text
+        label: Your Twitter ID
+    social_facebook:
+        type: text
+        label: Your Twitter ID
+       
+    social_medium:
+        type: text
+        label: Your Twitter ID
+      
+    social_github:
+        type: text
+        label: Your Twitter ID
+       
+    social_gitlab:
+        type: text
+        label: Your Twitter ID
+    social_bitbucket:
+        type: text
+        label: Your Twitter ID
+    social_stackoverflow:
+        type: text
+        label: Your Twitter ID
+    social_keybase:
+        type: text
+        label: Your Twitter ID
+    social_docker:
+        type: text
+        label: Your Twitter ID
+    social_linkedin:
+        type: text
+        label: Your Twitter ID
+    social_dribbble:
+        type: text
+        label: Your Twitter ID
+    social_flickr:
+        type: text
+        label: Your Twitter ID
+    social_instagram:
+        type: text
+        label: Your Twitter ID
+    social_tumblr:
+        type: text
+        label: Your Twitter ID
+    social_spotify:
+        type: text
+        label: Your Twitter ID
+    social_youtube:
+        type: text
+        label: Your Twitter ID
+    social_twitch:
+        type: text
+        label: Your Twitter ID
+    social_steam:
+        type: text
+        label: Your Twitter ID
+    social_discord:
+        type: text
+        label: Your Twitter ID
+    social_bitcoin:
+        type: text
+        label: Your Twitter ID
+    social_ethereum:
+        type: text
+        label: Your Twitter ID
+    social_email:
+        type: text
+        label: Your Twitter ID
+    
