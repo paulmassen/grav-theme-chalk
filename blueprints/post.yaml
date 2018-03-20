@@ -1,0 +1,13 @@
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.headline:
+              type: text
+              label: A few words to describe the topic of this post
+              style: vertical
+              ordering@: header.title

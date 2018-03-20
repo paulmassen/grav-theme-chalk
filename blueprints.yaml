@@ -29,6 +29,11 @@ form:
         options:
           dark: Dark Theme
           light: Light Theme
+    footer_text:
+        type: textarea
+        style: vertical
+        label: Footer Text
+        default: 'Chalk Theme - A Grav port of Jekyll''s Chalk theme, made by Nielsen Ramon. Grav port by <a href="https://github.com/paulmassen">Paul Massendari</a>'
     social_section:
         type: section
         title: Social Links
