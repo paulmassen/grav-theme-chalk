@@ -8,7 +8,7 @@
             <div class="wrapper padding">
                 <h1 style="text-align: center;padding-top:100px; padding-bottom:80px;"><i class="fa fa-hashtag"></i>tags</h1>
                {{ page.content }}
-               {% include 'partials/taxonomylist.html.twig' with {base_url: my_url, taxonomy: 'tag'} %}
+               {% include 'partials/taxonomylist.html.twig' with {route_url: my_url, taxonomy: 'tag'} %}
 
             </div>
           </section>
