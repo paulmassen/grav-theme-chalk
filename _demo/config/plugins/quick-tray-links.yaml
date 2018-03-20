@@ -1,0 +1,11 @@
+enabled: true
+links:
+  - icon: fa fa-book
+    link: https://learn.getgrav.org
+    tooltip: Grav Documentation and Tutorials
+  - icon: fa fa-info
+    link: /admin/config/info
+    tooltip: PHP Information
+  - icon: fa fa-gear
+    link: /admin/themes/chalk
+    tooltip: Theme Settings
