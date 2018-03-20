@@ -987,7 +987,7 @@ img {
   .highlight pre {
     margin: 0; }
 
-.highlighter-rouge {
+code {
   padding: 2px 4px;
   font-size: 14px;
   color: #d14;

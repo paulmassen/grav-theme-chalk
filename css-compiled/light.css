@@ -604,9 +604,20 @@ img {
   color: #fff;
   background-color: #121111; }
 
+.header-links > li > a {
+  text-decoration: none; }
+
+.no-text-decoration {
+  text-decoration: none; }
+
+.tag-cloud {
+  font-size: 135%;
+  padding: 25px; }
+
 .footer {
   display: block;
   padding-top: 35px;
+  margin-top: 35px;
   margin-bottom: 85px;
   border-top: 1px solid #ebeaea; }
   .footer p {
@@ -987,7 +998,7 @@ img {
   .highlight pre {
     margin: 0; }
 
-.highlighter-rouge {
+code {
   padding: 2px 4px;
   font-size: 14px;
   color: #d14;

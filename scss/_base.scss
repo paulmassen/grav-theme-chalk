@@ -153,3 +153,13 @@ img {
   color: $white;
   background-color: $gray-darkest;
 }
+.header-links > li > a{
+  text-decoration: none;
+}
+.no-text-decoration{
+  text-decoration: none;
+}
+.tag-cloud{
+  font-size:135%;
+  padding:25px;
+}

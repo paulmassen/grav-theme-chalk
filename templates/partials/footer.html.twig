@@ -1,22 +1,6 @@
-<nav class="header-nav {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
-  <a href="{{ home_url }}" class="header-logo" title="{{ site.title }}">{{ site.title }}</a>
-  <ul class="header-links">
+ <footer class="footer {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
 
-    {% for p in pages.children.visible %}
-        {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
-            <li>
-              
-              
-                <a href="{{ p.url }}" class="{{ active_page }}">
-                   {% if p.header.iconmenu %}
-              <i class="fa {{p.header.iconmenu }}"></i>
-              {% endif %} {{ p.menu }}
-                </a>
-            </li>
-    {% endfor %}
-
-
-
+   <ul class="header-links" style="text-align:center; float: none!important;">
     {% if theme_config.about_enabled == true %}
       <li>
         <a href="{{ 'about' | relative_url }}" title="About me">
@@ -263,4 +247,9 @@
       </li>
     {% endif %}
   </ul>
-</nav>
+   <p>
+    Chalk is a high quality, completely customizable, performant and 100% free
+    blog template for Jekyll built by
+    <a href="{{ 'about' | relative_url }}" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>.
+  </p>
+</footer>

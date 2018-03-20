@@ -12,7 +12,7 @@
 
     <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     {% block stylesheets %}
 <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Lato" rel="stylesheet">
     {% if theme_config.blog_theme == "light" %}
@@ -20,7 +20,7 @@
     {% else %}
         {% do assets.addCss('theme://css-compiled/dark.css', 98) %}
     {% endif %}
-        
+        {% do assets.addCss('https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css', 98) %}
     {% endblock %}
     {{ assets.css() }}
 
@@ -29,27 +29,9 @@
 <body {% if page.header.body_classes %}class="{{ page.header.body_classes }}" {% endif %}>
 
   <main>
-    <div class="grid grid-centered">
-      <div class="grid-cell">
-        {% include 'partials/navigation.html.twig' %}
-          <section id="body">
-        <div class="wrapper padding">
-        {% block content %}{% endblock %}
-        </div>
-    </section>
-
-        {% block footer %}
- <footer class="footer {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
-  <p>
-    Chalk is a high quality, completely customizable, performant and 100% free
-    blog template for Jekyll built by
-    <a href="{{ 'about' | relative_url }}" title="About me">Nielsen Ramon</a>. Download it <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">here</a>.
-  </p>
-</footer>
-
-{% endblock %}
-      </div>
-    </div>
+      {% block content %}
+        {% endblock %}
+    
   </main>
   
 
@@ -62,14 +44,19 @@
     gtag('js', new Date());
     gtag('config', '{{ site.ga_analytics }}');
   </script>
+  
 {% endif %}
-   
+
+   {% do assets.addJs('jquery', 108) %}
+   {% do assets.addJs('//cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js', 107) %}
     {% do assets.addJs('theme://js/vendor.js', 103) %}
     {% do assets.addJs('theme://js/webfont.js', 102) %}
      {% if theme_config.scrollappear_enabled %}
     {% do assets.addJs('theme://js/scrollappear.js', 103) %}
     {% endif %}
+  {% do assets.addJs('https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/js/jquery.fluidbox.min.js', 102) %}
     {% do assets.addJs('theme://js/application.js', 100) %}
+    
 {% endblock %}
 {{ assets.js() }}
 

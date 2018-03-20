@@ -11,20 +11,17 @@ keywords: grav, theme, etc
 bugs: https://github.com/paul-massendari/grav-theme-chalk/issues
 readme: https://github.com/paul-massendari/grav-theme-chalk/blob/develop/README.md
 license: MIT
+dependencies:
+    - { name: grav, version: '>=1.3.8' }
+    - { name: admin, version: '>=1.6.6' }
+    - { name: readingtime, version: '>=1.2.0' }
+    - { name: highlight, version: '>=1.4.0' }
+    - { name: taxonomylist, version: '>=1.3.1' }
+    - { name: quick-tray-links, version: '>=1.0.0' }
 
 form:
   validation: loose
   fields:
-    dropdown.enabled:
-        type: toggle
-        label: Dropdown in Menu
-        highlight: 1
-        default: 1
-        options:
-          1: PLUGIN_ADMIN.ENABLED
-          0: PLUGIN_ADMIN.DISABLED
-        validate:
-          type: bool
     blog_theme:
         type: toggle
         label: Blog Theme
@@ -32,74 +29,88 @@ form:
         options:
           dark: Dark Theme
           light: Light Theme
-
-    social_twitter:
-        type: text
-        label: Your Twitter ID
-    social_facebook:
-        type: text
-        label: Your Twitter ID
-       
-    social_medium:
-        type: text
-        label: Your Twitter ID
-      
-    social_github:
-        type: text
-        label: Your Twitter ID
-       
-    social_gitlab:
-        type: text
-        label: Your Twitter ID
-    social_bitbucket:
-        type: text
-        label: Your Twitter ID
-    social_stackoverflow:
-        type: text
-        label: Your Twitter ID
-    social_keybase:
-        type: text
-        label: Your Twitter ID
-    social_docker:
-        type: text
-        label: Your Twitter ID
-    social_linkedin:
-        type: text
-        label: Your Twitter ID
-    social_dribbble:
-        type: text
-        label: Your Twitter ID
-    social_flickr:
-        type: text
-        label: Your Twitter ID
-    social_instagram:
-        type: text
-        label: Your Twitter ID
-    social_tumblr:
-        type: text
-        label: Your Twitter ID
-    social_spotify:
-        type: text
-        label: Your Twitter ID
-    social_youtube:
-        type: text
-        label: Your Twitter ID
-    social_twitch:
-        type: text
-        label: Your Twitter ID
-    social_steam:
-        type: text
-        label: Your Twitter ID
-    social_discord:
-        type: text
-        label: Your Twitter ID
-    social_bitcoin:
-        type: text
-        label: Your Twitter ID
-    social_ethereum:
-        type: text
-        label: Your Twitter ID
-    social_email:
-        type: text
-        label: Your Twitter ID
-    
+    social_section:
+        type: section
+        title: Social Links
+        text: These icons will appear on the header and on the footer of the page
+        underline: true
+    social_columns:
+        type: columns
+        fields:
+            column1:
+                type: column
+                fields:
+                    social_twitter:
+                        type: text
+                        label: Twitter ID <i class="fa fa-twitter"></i>
+                    social_facebook:
+                        type: text
+                        label: Facebook ID <i class="fa fa-facebook"></i>
+                       
+                    social_medium:
+                        type: text
+                        label: Medium ID <i class="fa fa-medium"></i>
+                      
+                    social_github:
+                        type: text
+                        label:  Github ID  <i class="fa fa-github"></i>
+                       
+                    social_gitlab:
+                        type: text
+                        label: Gitlab ID <i class="fa fa-gitlab"></i>
+                    social_bitbucket:
+                        type: text
+                        label: Bitbucket ID <i class="fa fa-bitbucket"></i>
+                    social_stackoverflow:
+                        type: text
+                        label: Stackoverflow ID <i class="fa fa-stack-overflow"></i>
+                    social_keybase:
+                        type: text
+                        label: Keybase ID <i class="fa fa-keybase"></i>
+                    social_docker:
+                        type: text
+                        label: Docker ID <i class="fa fa-docker"></i>
+                    social_linkedin:
+                        type: text
+                        label: Linkedin ID <i class="fa fa-linkedin"></i>
+                    social_dribbble:
+                        type: text
+                        label: Dribbble Twitter ID <i class="fa fa-dribbble"></i>
+                    
+            column2:
+                type: column
+                fields:
+                    social_spotify:
+                        type: text
+                        label: Spotify ID <i class="fa fa-spotify"></i>
+                    social_youtube:
+                        type: text
+                        label: Youtube ID <i class="fa fa-youtube"></i>
+                    social_twitch:
+                        type: text
+                        label: Twitch ID <i class="fa fa-twitch"></i>
+                    social_steam:
+                        type: text
+                        label: Steam ID <i class="fa fa-steam"></i>
+                    social_discord:
+                        type: text
+                        label: Discord ID <i class="fa fa-discord"></i>
+                    social_bitcoin:
+                        type: text
+                        label: Bitcoin Address <i class="fa fa-bitcoin"></i>
+                    social_ethereum:
+                        type: text
+                        label: Ethereum Address <i class="fa fa-ethereum"></i>
+                    social_email:
+                        type: text
+                        label: Email Address <i class="fa fa-envelope"></i>
+                    social_flickr:
+                        type: text
+                        label: Flickr ID <i class="fa fa-flicker"></i>
+                    social_instagram:
+                        type: text
+                        label: Instagram ID <i class="fa fa-instagram"></i>
+                    social_tumblr:
+                        type: text
+                        label: Tumblr ID <i class="fa fa-tumblr"></i>
+                    

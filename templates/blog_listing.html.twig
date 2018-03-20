@@ -1,0 +1,39 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="grid grid-centered">
+      <div class="grid-cell">
+        {% include 'partials/navigation.html.twig' %}
+               {{ page.content }}
+               <ul class="article-list">
+               {% for article in page.collection() %}
+               <li class="article-list-item {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
+                   <a href="{{ article.url }}" title="{{article.title}}">
+                    <h5>{{article.title}}</h5>
+                   <p>{{article.header.headline}}</p>
+                   <div class="article-list-footer">
+                        <span class="article-list-date">
+                        {{article.date|date('d-m-Y') }}
+                        </span>
+                        <span class="article-list-divider">-</span>
+                        <span class="article-list-minutes">
+                        {{ article.content|readingtime }}
+                        </span>
+                        <span class="article-list-divider">-</span>
+                        <div class="article-list-tags">
+                            {% for tag in article.taxonomy.tag %}
+                        <a href="/tag/web">{{ tag }}</a>
+                        {% endfor %}
+                       
+                        </div>
+                    </div>
+                   </a>
+               </li>
+               {% endfor %}
+               </ul>
+{% include 'partials/footer.html.twig' %}
+
+    </div>
+</div>
+  
+{% endblock %}
