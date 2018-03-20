@@ -4,7 +4,7 @@
 <span class="tags" style="text-align: center;">
     {% for tax,value in taxlist[taxonomy] %}
         {% set active = uri.param(taxonomy) == tax? 'active' : '' %}
-        <a class="no-text-decoration tag-cloud" href="{{ base_url }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax }}">{{ tax|upper }}</a>
+        <a class="no-text-decoration tag-cloud" href="{{ base_url }}{{config.plugins.taxonomylist.route }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax }}">{{ tax|upper }}</a>
     {% endfor %}
 </span>
 {% endif %}
