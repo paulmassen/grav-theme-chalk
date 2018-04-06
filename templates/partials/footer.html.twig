@@ -1,6 +1,8 @@
  <footer class="footer {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
 
    <ul class="header-links" style="text-align:center; float: none!important;">
+   
+
     {% if theme_config.about_enabled == true %}
       <li>
         <a href="{{ 'about' | relative_url }}" title="About me">
@@ -214,6 +216,8 @@
     {% if theme_config.social_discord %}
       <li>
         <a href="https://discord.gg/{{ theme_config.social_discord }}" rel="noreferrer noopener" target="_blank" title="Discord Server">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon-discord">
+            <use href="{{url('theme://templates/icons/discord.svg')}}#icon-discord" xlink:href="{{url('theme://templates/icons/discord.svg')}}#icon-discord">
           {% include 'icons/discord.svg' %}
         </a>
       </li>
@@ -221,6 +225,8 @@
     {% if theme_config.social_bitcoin %}
       <li>
         <a href="https://blockexplorer.com/address/{{ theme_config.social_bitcoin }}" rel="noreferrer noopener" target="_blank" title="Bitcoin">
+             <svg xmlns="http://www.w3.org/2000/svg" class="icon-bitcoin">
+            <use href="{{url('theme://templates/icons/bitcoin.svg')}}#icon-bitcoin" xlink:href="{{url('theme://templates/icons/bitcoin.svg')}}#icon-bitcoin">
           {% include 'icons/bitcoin.svg' %}
         </a>
       </li>
@@ -228,6 +234,8 @@
     {% if theme_config.social_ethereum %}
       <li>
         <a href="https://etherscan.io/address/{{ theme_config.social_ethereum }}" rel="noreferrer noopener" target="_blank" title="Ethereum">
+             <svg xmlns="http://www.w3.org/2000/svg" class="icon-ethereum">
+            <use href="{{url('theme://templates/icons/ethereum.svg')}}#icon-ethereum" xlink:href="{{url('theme://templates/icons/ethereum.svg')}}#icon-ethereum">
           {% include 'icons/ethereum.svg' %}
         </a>
       </li>
@@ -235,6 +243,8 @@
     {% if theme_config.social_email %}
       <li>
         <a href="mailto:{{ theme_config.social_email }}" title="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
+            <use href="{{url('theme://templates/icons/email.svg')}}#icon-email" xlink:href="{{url('theme://templates/icons/email.svg')}}#icon-email">
           {% include 'icons/email.svg' %}
         </a>
       </li>
@@ -242,6 +252,8 @@
     {% if theme_config.rss_enabled == true %}
       <li>
         <a href="{{ 'feed.xml' | relative_url }}" rel="noreferrer noopener" target="_blank" title="RSS">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+            <use href="{{url('theme://templates/icons/rss.svg')}}#icon-rss" xlink:href="{{url('theme://templates/icons/rss.svg')}}#icon-rss">
           {% include 'icons/rss.svg' %}
         </a>
       </li>
