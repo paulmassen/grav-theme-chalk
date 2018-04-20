@@ -33,6 +33,7 @@ pre {
     background: #F0F0F0;
     margin: 1rem 0;
     border-radius: 2px;
+    white-space: pre-wrap;
 }
 
 blockquote {
