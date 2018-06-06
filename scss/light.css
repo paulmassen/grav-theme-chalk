@@ -604,12 +604,24 @@ img {
   color: #fff;
   background-color: #121111; }
 
+.header-links > li > a {
+  text-decoration: none; }
+
+.no-text-decoration {
+  text-decoration: none; }
+
+.tag-cloud {
+  font-size: 135%;
+  padding: 25px; }
+
 .footer {
   display: block;
   padding-top: 35px;
+  margin-top: 35px;
   margin-bottom: 85px;
   border-top: 1px solid #ebeaea; }
   .footer p {
+    text-align: center;
     font-size: 15px;
     color: #ada8a8; }
   .footer a {
@@ -936,8 +948,7 @@ img {
   border-bottom: 1px solid #ebeaea; }
 
 .header-logo {
-  display: inline-block;
-  font-family: "Cormorant Garamond", Courier, serif;
+  display: inline-block;  
   font-size: 36px;
   font-weight: 700;
   color: #000;
