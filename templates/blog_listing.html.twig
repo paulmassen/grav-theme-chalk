@@ -9,8 +9,8 @@
                {% for article in page.collection() %}
                <li class="article-list-item {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
                    <a href="{{ article.url }}" title="{{article.title}}">
-                    <h5>{{article.title}}</h5>
-                   <p>{{article.header.headline}}</p>
+                    <h4>{{article.title}}</4>
+                   <h5>{{article.header.headline}}</h5>
                    <div class="article-list-footer">
                         <span class="article-list-date">
                         {{article.date|date('d-m-Y') }}
@@ -20,14 +20,18 @@
                         {{ article.content|readingtime }}
                         </span>
                         <span class="article-list-divider">-</span>
+                        </a>
                         <div class="article-list-tags">
                             {% for tag in article.taxonomy.tag %}
-                        <a href="/tag/web">{{ tag }}</a>
+                        <a href="{{ base_url }}{{config.plugins.taxonomylist.route }}/{{ 'tag' }}{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
                         {% endfor %}
-                       
                         </div>
                     </div>
-                   </a>
+                    {% if theme_config.summary_enabled == "on" %}
+                    <a href="{{ article.url }}" title="{{article.title}}">
+                      <p>{{article.summary}}</p>
+                    </a>
+                    {% endif %}
                </li>
                {% endfor %}
                </ul>
@@ -35,5 +39,5 @@
 
     </div>
 </div>
-  
+
 {% endblock %}
