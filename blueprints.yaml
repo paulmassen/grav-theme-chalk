@@ -36,6 +36,13 @@ form:
         options:
           on: On
           off: Off
+    header_font:
+        type: toggle
+        label: Header font
+        default: cormorant
+        options:
+          lato: Lato
+          cormorant: Cormorant
     footer_text:
         type: textarea
         style: vertical
@@ -125,4 +132,3 @@ form:
                     social_tumblr:
                         type: text
                         label: Tumblr ID <i class="fa fa-tumblr"></i>
-                    

@@ -621,6 +621,7 @@ img {
   margin-bottom: 85px;
   border-top: 1px solid #393636; }
   .footer p {
+    text-align: center;
     font-size: 15px;
     color: #ada8a8; }
   .footer a {
@@ -948,7 +949,6 @@ img {
 
 .header-logo {
   display: inline-block;
-  font-family: "Cormorant Garamond", Courier, serif;
   font-size: 36px;
   font-weight: 700;
   color: #fff;
