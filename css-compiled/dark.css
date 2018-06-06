@@ -621,6 +621,7 @@ img {
   margin-bottom: 85px;
   border-top: 1px solid #393636; }
   .footer p {
+    text-align: center;
     font-size: 15px;
     color: #ada8a8; }
   .footer a {
