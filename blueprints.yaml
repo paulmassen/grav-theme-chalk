@@ -5,11 +5,11 @@ icon: rebel
 author:
   name: Paul Massendari
   email: paul@massendari.com
-homepage: https://github.com/paul-massendari/grav-theme-chalk
+homepage: https://github.com/paulmassen/grav-theme-chalk
 demo: http://chalk.paulmassendari.com
 keywords: grav, theme, etc
-bugs: https://github.com/paul-massendari/grav-theme-chalk/issues
-readme: https://github.com/paul-massendari/grav-theme-chalk/blob/develop/README.md
+bugs: https://github.com/paulmassen/grav-theme-chalk/issues
+readme: https://github.com/paulmassen/grav-theme-chalk/blob/master/README.md
 license: MIT
 dependencies:
     - { name: grav, version: '>=1.3.8' }
@@ -29,6 +29,13 @@ form:
         options:
           dark: Dark Theme
           light: Light Theme
+    summary_enabled:
+        type: toggle
+        label: Articles summary
+        default: off
+        options:
+          on: On
+          off: Off
     footer_text:
         type: textarea
         style: vertical
@@ -51,15 +58,15 @@ form:
                     social_facebook:
                         type: text
                         label: Facebook ID <i class="fa fa-facebook"></i>
-                       
+
                     social_medium:
                         type: text
                         label: Medium ID <i class="fa fa-medium"></i>
-                      
+
                     social_github:
                         type: text
                         label:  Github ID  <i class="fa fa-github"></i>
-                       
+
                     social_gitlab:
                         type: text
                         label: Gitlab ID <i class="fa fa-gitlab"></i>
@@ -81,7 +88,7 @@ form:
                     social_dribbble:
                         type: text
                         label: Dribbble Twitter ID <i class="fa fa-dribbble"></i>
-                    
+
             column2:
                 type: column
                 fields:
@@ -118,4 +125,3 @@ form:
                     social_tumblr:
                         type: text
                         label: Tumblr ID <i class="fa fa-tumblr"></i>
-                    
