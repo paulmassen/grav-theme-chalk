@@ -23,7 +23,7 @@
                         </a>
                         <div class="article-list-tags">
                             {% for tag in article.taxonomy.tag %}
-                        <a href="/tag/web">{{ tag }}</a>
+                        <a href="{{ base_url }}{{config.plugins.taxonomylist.route }}/{{ 'tag' }}{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
                         {% endfor %}
                         </div>
                     </div>
