@@ -35,6 +35,9 @@
                </li>
                {% endfor %}
                </ul>
+               {% if config.plugins.pagination.enabled and page.collection.params.pagination %}
+                    {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':page.collection.params.pagination} %}
+               {% endif %}
 {% include 'partials/footer.html.twig' %}
 
     </div>
