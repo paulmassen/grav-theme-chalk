@@ -9,7 +9,7 @@ homepage: https://github.com/paulmassen/grav-theme-chalk
 demo: http://chalk.paulmassendari.com
 keywords: grav, theme, etc
 bugs: https://github.com/paulmassen/grav-theme-chalk/issues
-readme: https://github.com/paulmassen/grav-theme-chalk/blob/develop/README.md
+readme: https://github.com/paulmassen/grav-theme-chalk/blob/master/README.md
 license: MIT
 dependencies:
     - { name: grav, version: '>=1.3.8' }
