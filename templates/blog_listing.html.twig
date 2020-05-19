@@ -1,46 +1,38 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-<div class="grid grid-centered">
-      <div class="grid-cell">
-        {% include 'partials/navigation.html.twig' %}
-               {{ page.content }}
-               <ul class="article-list">
-               {% for article in page.collection() %}
-               <li class="article-list-item {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
-                   <a href="{{ article.url }}" title="{{article.title}}">
-                    <h4>{{article.title}}</4>
-                   <h5>{{article.header.headline}}</h5>
-                   <div class="article-list-footer">
-                        <span class="article-list-date">
+	{% include 'partials/navigation.html.twig' %}
+    {{ page.content }}
+    <ul class="article-list">
+    	{% for article in page.collection() %}
+        <li class="article-list-item {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
+         	<a href="{{ article.url }}" title="{{article.title}}">
+            	<h4>{{article.title}}</4>
+                <h5>{{article.header.headline}}</h5>
+                <div class="article-list-footer">
+                	<span class="article-list-date">
                         {{article.date|date('d-m-Y') }}
-                        </span>
-                        <span class="article-list-divider">-</span>
-                        <span class="article-list-minutes">
+                    </span>
+                    <span class="article-list-divider">-</span>
+                    <span class="article-list-minutes">
                         {{ article.content|readingtime }}
-                        </span>
-                        <span class="article-list-divider">-</span>
-                        </a>
-                        <div class="article-list-tags">
+                    </span>
+                    <span class="article-list-divider">-</span>
+                     </a>
+                    <div class="article-list-tags">
                             {% for tag in article.taxonomy.tag %}
                         <a href="{{ base_url }}{{config.plugins.taxonomylist.route }}/{{ 'tag' }}{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
-                        {% endfor %}
-                        </div>
-                    </div>
-                    {% if theme_config.summary_enabled == "on" %}
-                    <a href="{{ article.url }}" title="{{article.title}}">
-                      <p>{{article.summary}}</p>
-                    </a>
-                    {% endif %}
-               </li>
-               {% endfor %}
-               </ul>
-               {% if config.plugins.pagination.enabled and page.collection.params.pagination %}
-                    {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':page.collection.params.pagination} %}
-               {% endif %}
-{% include 'partials/footer.html.twig' %}
-
-    </div>
-</div>
+                     {% endfor %}
+                     </div>
+                </div>
+                {% if theme_config.summary_enabled == "on" %}
+                <a href="{{ article.url }}" title="{{article.title}}">
+                    <p>{{article.summary}}</p>
+                </a>
+            {% endif %}
+        	</li>
+        {% endfor %}
+     	</ul>
+	{% include 'partials/footer.html.twig' %}
 
 {% endblock %}

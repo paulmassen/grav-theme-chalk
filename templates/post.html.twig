@@ -1,8 +1,6 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
- <div class="grid grid-centered">
-      <div class="grid-cell">
         {% include 'partials/navigation.html.twig' %}
  <article class="article {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
           <header class="article-header">
@@ -46,6 +44,4 @@
           {% endif %}
         </article>
         {% include 'partials/footer.html.twig' %}
-      </div>
-    </div>
     {% endblock %}

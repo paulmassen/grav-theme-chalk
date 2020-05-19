@@ -29,9 +29,12 @@
 <body {% if page.header.body_classes %}class="{{ page.header.body_classes }}" {% endif %}>
 
   <main>
-      {% block content %}
+	<div class="grid grid-centered"{% if theme_config.body_width%}style="max-width: {{ theme_config.body_width }};" {% endif %}>
+      <div class="grid-cell">
+      	{% block content %}
         {% endblock %}
-    
+   		</div> 
+   	</div> 
   </main>
   
 
