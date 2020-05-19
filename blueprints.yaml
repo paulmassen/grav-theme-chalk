@@ -43,6 +43,10 @@ form:
         options:
           lato: Lato
           cormorant: Cormorant
+    body_width:
+        type: text
+        label: Custom body width
+        default: '' 
     footer_text:
         type: textarea
         style: vertical
