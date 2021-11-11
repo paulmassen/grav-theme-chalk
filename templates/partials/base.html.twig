@@ -22,7 +22,7 @@
     {% endif %}
         {% do assets.addCss('https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css', 98) %}
     {% endblock %}
-    {{ assets.css() }}
+    {{ assets.css() | raw }}
 
 {% endblock head%}
 </head>
@@ -58,7 +58,7 @@
     {% do assets.addJs('theme://js/application.js', 100) %}
     
 {% endblock %}
-{{ assets.js() }}
+{{ assets.js() | raw }}
 
 </body>
 </html>

@@ -6,7 +6,7 @@
         {% include 'partials/navigation.html.twig' %}
           <section id="body">
             <div class="wrapper padding">
-               {{ page.content }}
+               {{ page.content | raw }}
             </div>
           </section>
 
