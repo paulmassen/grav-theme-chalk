@@ -251,7 +251,7 @@
     {% endif %}
     {% if theme_config.rss_enabled == true %}
       <li>
-        <a href="{{ 'feed.xml' | relative_url }}" rel="noreferrer noopener" target="_blank" title="RSS">
+<a href="{{ base_url }}.rss" rel="noreferrer noopener" target="_blank" title="RSS">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
             <use href="{{url('theme://templates/icons/rss.svg')}}#icon-rss" xlink:href="{{url('theme://templates/icons/rss.svg')}}#icon-rss">
           {% include 'icons/rss.svg' %}
