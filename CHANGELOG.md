@@ -1,3 +1,10 @@
+# v0.4.0
+##  17/01/2022
+
+1. [](#new)
+    * Fixed a problem with Escaping that broke the entire theme
+    * Removed an unwanted Steam icon
+
 # v0.3.0
 ##  04/05/2018
 
