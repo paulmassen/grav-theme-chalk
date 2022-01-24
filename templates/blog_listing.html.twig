@@ -2,7 +2,7 @@
 
 {% block content %}
 	{% include 'partials/navigation.html.twig' %}
-    {{ page.content }}
+    {{ page.content|raw }}
     <ul class="article-list">
     	{% for article in page.collection() %}
         <li class="article-list-item {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
