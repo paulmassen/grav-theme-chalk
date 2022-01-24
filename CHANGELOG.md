@@ -1,3 +1,9 @@
+# v0.4.1
+##  24/01/2022
+
+1. [](#new)
+    * Fixed a problem with Escaping on the blog-listing template
+
 # v0.4.0
 ##  17/01/2022
 
