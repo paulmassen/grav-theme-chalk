@@ -12,15 +12,15 @@
 
     <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     {% block stylesheets %}
-<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Lato" rel="stylesheet">
+    {% do assets.addCss('theme://css-external/font-awesome.min.css', 98) %}
+    {% do assets.addCss('theme://css-external/fluidbox.min.css', 98) %}
+    {% do assets.addCss('theme://css-compiled/fonts.css', 98) %}
     {% if theme_config.blog_theme == "light" %}
         {% do assets.addCss('theme://css-compiled/light.css', 98) %}
     {% else %}
         {% do assets.addCss('theme://css-compiled/dark.css', 98) %}
     {% endif %}
-        {% do assets.addCss('https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/css/fluidbox.min.css', 98) %}
     {% endblock %}
     {{ assets.css() | raw }}
 
@@ -51,14 +51,14 @@
 {% endif %}
 
    {% do assets.addJs('jquery', 108) %}
-   {% do assets.addJs('//cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js', 107) %}
-    {% do assets.addJs('theme://js/vendor.js', 103) %}
-    {% do assets.addJs('theme://js/webfont.js', 102) %}
-     {% if theme_config.scrollappear_enabled %}
-    {% do assets.addJs('theme://js/scrollappear.js', 103) %}
-    {% endif %}
-  {% do assets.addJs('https://cdnjs.cloudflare.com/ajax/libs/fluidbox/2.0.5/js/jquery.fluidbox.min.js', 102) %}
-    {% do assets.addJs('theme://js/application.js', 100) %}
+   {% do assets.addJs('theme://js/jquery.ba-throttle-debounce.min.js', 107) %}
+   {% do assets.addJs('theme://js/vendor.js', 103) %}
+   {% do assets.addJs('theme://js/webfont.js', 102) %}
+   {% if theme_config.scrollappear_enabled %}
+     {% do assets.addJs('theme://js/scrollappear.js', 103) %}
+   {% endif %}
+   {% do assets.addJs('theme://js/jquery.fluidbox.min.js', 102) %}
+   {% do assets.addJs('theme://js/application.js', 100) %}
     
 {% endblock %}
 {{ assets.js() | raw }}
