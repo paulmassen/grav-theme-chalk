@@ -99,6 +99,9 @@ form:
                     social_dribbble:
                         type: text
                         label: Dribbble Twitter ID <i class="fa fa-dribbble"></i>
+                    social_soundcloud:
+                        type: text
+                        label: SoundCloud ID <i class="fa fa-soundcloud"></i>
 
             column2:
                 type: column

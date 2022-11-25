@@ -205,6 +205,17 @@
         </a>
       </li>
     {% endif %}
+    {% if theme_config.social_soundcloud %}
+      <li>
+        <a href="https://www.soundcloud.com/{{ theme_config.social_soundcloud }}" rel="noreferrer noopener" target="_blank" title="Youtube">
+           <svg xmlns="http://www.w3.org/2000/svg" class="icon-soundcloud">
+  <use href="{{url('theme://templates/icons/soundcloud.svg')}}#icon-soundcloud" xlink:href="{{url('theme://templates/icons/soundcloud.svg')}}#icon-soundcloud">
+          {% include 'icons/soundcloud.svg' %}
+        </use>
+    </svg>
+        </a>
+      </li>
+    {% endif %}
     {% if theme_config.social_twitch %}
       <li>
         <a href="https://www.twitch.tv/{{ theme_config.social_twitch }}" rel="noreferrer noopener" target="_blank" title="Twitch">
