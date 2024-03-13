@@ -27,7 +27,7 @@
                 </div>
                 {% if theme_config.summary_enabled == "on" %}
                 <a href="{{ article.url }}" title="{{article.title}}">
-                    <p>{{article.summary}}</p>
+                    <p>{{article.summary|raw}}</p>
                 </a>
             {% endif %}
         	</li>
