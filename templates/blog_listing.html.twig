@@ -4,14 +4,19 @@
 	{% include 'partials/navigation.html.twig' %}
 	{{ page.content|raw }}
 	<ul class="article-list">
-		{% for article in page.collection() %}
+		{% set collection = page.collection() %}
+		{% if collection is empty %}
+			{% set thispage = page.url(false)|e %}
+			{% set collection = page.find(thispage).children.published.order('date', 'desc') %}
+		{% endif %}
+		{% for article in collection %}
 			<li class="article-list-item {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
-				<a href="{{ article.url }}" title="{{article.title}}">
-					<h4>{{article.title}}</4>
-					<h5>{{article.header.headline}}</h5>
+				<a href="{{ article.url }}" title="{{ article.title }}">
+					<h4>{{ article.title }}</h4>
+					<h5>{{ article.header.headline }}</h5>
 					<div class="article-list-footer">
 						<span class="article-list-date">
-							{{article.date|date('d-m-Y') }}
+							{{ article.date|date('d-m-Y') }}
 						</span>
 						<span class="article-list-divider">-</span>
 						<span class="article-list-minutes">
@@ -20,21 +25,20 @@
 						{% if article.taxonomy %}
 							<span class="article-list-divider">-</span>
 						{% endif %}
-					</a>
-					<div class="article-list-tags">
-						{% for tag in article.taxonomy.tag %}
-							<a href="{{ base_url }}{{config.plugins.taxonomylist.route }}/{{ 'tag' }}{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
-						{% endfor %}
 					</div>
+				</a>
+				<div class="article-list-tags">
+					{% for tag in article.taxonomy.tag %}
+						<a href="{{ base_url }}{{ config.plugins.taxonomylist.route }}/{{ 'tag' }}{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+					{% endfor %}
 				</div>
 				{% if theme_config.summary_enabled == "on" %}
-					<a href="{{ article.url }}" title="{{article.title}}">
-						<p>{{article.summary|raw}}</p>
+					<a href="{{ article.url }}" title="{{ article.title }}">
+						<p>{{ article.summary|raw }}</p>
 					</a>
 				{% endif %}
 			</li>
 		{% endfor %}
 	</ul>
 	{% include 'partials/footer.html.twig' %}
-
 {% endblock %}

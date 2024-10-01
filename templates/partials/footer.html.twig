@@ -1,8 +1,5 @@
 <footer class="footer {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
-
 	<ul class="header-links" style="text-align:center; float: none!important;">
-
-
 		{% if theme_config.about_enabled == true %}
 			<li>
 				<a href="{{ 'about' | relative_url }}" title="About me">
@@ -14,6 +11,140 @@
 				</a>
 			</li>
 		{% endif %}
+		{% if theme_config.social_tiktok %}
+			<li>
+				<a href="https://www.tiktok.com/@{{ theme_config.social_tiktok }}" rel="noreferrer noopener" target="_blank" title="TikTok">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-tiktok">
+						<use href="/user/themes/chalk/templates/icons/tiktok.svg#icon-tiktok" xlink:href="/user/themes/chalk/templates/icons/tiktok.svg#icon-tiktok"></use>
+						{% include 'icons/tiktok.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_mastodon %}
+			<li>
+				<a href="{{ theme_config.social_mastodon }}" rel="noreferrer noopener" target="_blank" title="Mastodon">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-mastodon">
+						<use href="/user/themes/chalk/templates/icons/mastodon.svg#icon-mastodon" xlink:href="/user/themes/chalk/templates/icons/mastodon.svg#icon-mastodon"></use>
+						{% include 'icons/mastodon.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_threads %}
+			<li>
+				<a href="https://www.threads.net/@{{ theme_config.social_threads }}" rel="noreferrer noopener" target="_blank" title="Threads">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-threads">
+						<use href="/user/themes/chalk/templates/icons/threads.svg#icon-threads" xlink:href="/user/themes/chalk/templates/icons/threads.svg#icon-threads"></use>
+						{% include 'icons/threads.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_kofi %}
+			<li>
+				<a href="https://ko-fi.com/{{ theme_config.social_kofi }}" rel="noreferrer noopener" target="_blank" title="Ko-fi">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-kofi">
+						<use href="/user/themes/chalk/templates/icons/kofi.svg#icon-kofi" xlink:href="/user/themes/chalk/templates/icons/kofi.svg#icon-kofi"></use>
+						{% include 'icons/ko-fi.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_patreon %}
+			<li>
+				<a href="https://www.patreon.com/{{ theme_config.social_patreon }}" rel="noreferrer noopener" target="_blank" title="Patreon">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-patreon">
+						<use href="/user/themes/chalk/templates/icons/patreon.svg#icon-patreon" xlink:href="/user/themes/chalk/templates/icons/patreon.svg#icon-patreon"></use>
+						{% include 'icons/patreon.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+
+		{% if theme_config.social_bluesky %}
+			<li>
+				<a href="https://bsky.app/profile/{{ theme_config.social_bluesky }}" rel="noreferrer noopener" target="_blank" title="Bluesky">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-bluesky">
+						<use href="/user/themes/chalk/templates/icons/bluesky.svg#icon-bluesky" xlink:href="/user/themes/chalk/templates/icons/bluesky.svg#icon-bluesky"></use>
+						{% include 'icons/bluesky.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_telegram %}
+			<li>
+				<a href="https://t.me/{{ theme_config.social_telegram }}" rel="noreferrer noopener" target="_blank" title="Telegram">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-telegram">
+						<use href="/user/themes/chalk/templates/icons/telegram.svg#icon-telegram" xlink:href="/user/themes/chalk/templates/icons/telegram.svg#icon-telegram"></use>
+						{% include 'icons/telegram.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_whatsapp %}
+			<li>
+				<a href="https://wa.me/{{ theme_config.social_whatsapp }}" rel="noreferrer noopener" target="_blank" title="WhatsApp">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-whatsapp">
+						<use href="/user/themes/chalk/templates/icons/whatsapp.svg#icon-whatsapp" xlink:href="/user/themes/chalk/templates/icons/whatsapp.svg#icon-whatsapp"></use>
+						{% include 'icons/whatsapp.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_goodreads %}
+			<li>
+				<a href="https://www.goodreads.com/user/show/{{ theme_config.social_goodreads }}" rel="noreferrer noopener" target="_blank" title="Goodreads">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-goodreads">
+						<use href="/user/themes/chalk/templates/icons/goodreads.svg#icon-goodreads" xlink:href="/user/themes/chalk/templates/icons/goodreads.svg#icon-goodreads"></use>
+						{% include 'icons/goodreads.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_researchgate %}
+			<li>
+				<a href="https://www.researchgate.net/profile/{{ theme_config.social_researchgate }}" rel="noreferrer noopener" target="_blank" title="ResearchGate">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-researchgate">
+						<use href="/user/themes/chalk/templates/icons/researchgate.svg#icon-researchgate" xlink:href="/user/themes/chalk/templates/icons/researchgate.svg#icon-researchgate"></use>
+						{% include 'icons/researchgate.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_wechat %}
+			<li>
+				<a href="#" rel="noreferrer noopener" target="_blank" title="WeChat: {{ theme_config.social_wechat }}">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-wechat">
+						<use href="/user/themes/chalk/templates/icons/wechat.svg#icon-wechat" xlink:href="/user/themes/chalk/templates/icons/wechat.svg#icon-wechat"></use>
+						{% include 'icons/wechat.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_slack %}
+			<li>
+				<a href="{{ theme_config.social_slack }}" rel="noreferrer noopener" target="_blank" title="Slack">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-slack">
+						<use href="/user/themes/chalk/templates/icons/slack.svg#icon-slack" xlink:href="/user/themes/chalk/templates/icons/slack.svg#icon-slack"></use>
+						{% include 'icons/slack.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+
 		{% if theme_config.social_twitter %}
 			<li>
 				<a href="https://twitter.com/{{ theme_config.social_twitter }}" rel="noreferrer noopener" target="_blank" title="Twitter">
@@ -48,6 +179,18 @@
 				</a>
 			</li>
 		{% endif %}
+		{% if theme_config.social_xtwitter %}
+			<li>
+				<a href="https://x.com/{{ theme_config.social_xtwitter }}" rel="noreferrer noopener" target="_blank" title="X (Twitter)">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-xtwitter">
+						<use href="/user/themes/chalk/templates/icons/xtwitter.svg#icon-xtwitter" xlink:href="/user/themes/chalk/templates/icons/xtwitter.svg#icon-xtwitter"></use>
+						{% include 'icons/xtwitter.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+
 		{% if theme_config.social_github %}
 			<li>
 				<a href="https://github.com/{{ theme_config.social_github }}" rel="noreferrer noopener" target="_blank" title="GitHub">
@@ -301,7 +444,9 @@
 				</a>
 			</li>
 		{% endif %}
-	</li>
-</ul>
-<p>
-	{{ theme_config.footer_text | raw }}</p></li></footer></li>
+
+	</ul>
+	<p>
+		{{ theme_config.footer_text | raw }}
+	</p>
+</footer>
