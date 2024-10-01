@@ -27,7 +27,18 @@ As this theme is minimal, only a few templates are available:
 
 Every page added will be added to the navigation, but keep in mind that the theme is designed for websites with only a few pages (eg: Blog, About, Tags), adding more page might cause a bug in the display of the nav bar.
 
+## Setup
+Once installed, you should check out the Theme configuration page.
 
+If you plan on using taxonomies, you should set up the route of your blog on the plugin configuration page.
+Please note that taxonomies will only work if you correctly set up a page collection in the frontmatter of your blog page.
+Example :
+```
+content:
+    items:
+      '@page.children': '/blog'
+```
+More informations on page collection at the following link : https://learn.getgrav.org/17/content/collections#page-collections
 
 ## Todo
 

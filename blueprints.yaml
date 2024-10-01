@@ -1,12 +1,12 @@
 name: Chalk
-version: 0.4.2
+version: 0.5.0
 description: Port of Jekyll's chalk theme to Grav
 icon: rebel
 author:
   name: Paul Massendari
-  email: paul@massendari.com
+  email: paulmassendari@pm.me
 homepage: https://github.com/paulmassen/grav-theme-chalk
-demo: http://chalk.paulmassendari.com
+demo: 
 keywords: grav, theme, etc
 bugs: https://github.com/paulmassen/grav-theme-chalk/issues
 readme: https://github.com/paulmassen/grav-theme-chalk/blob/master/README.md
@@ -33,9 +33,22 @@ form:
         type: toggle
         label: Articles summary
         default: off
+        highlight: "off"
+        help: "Set to on if you want to display a summary of your articles on the blog listing page"
         options:
           on: On
           off: Off
+    scrollappear_enabled:
+        type: toggle
+        label: Scrollappear effet
+        default: on
+        highlight: 1
+        help: 'A simple Vanilla JS library to reveal elements on vertical scroll (1.2 KB minified and gzipped, no dependencies).'
+        validate:
+            type: bool
+        options:
+            1: "On"
+            0: "Off"
     header_font:
         type: toggle
         label: Header font
@@ -102,6 +115,26 @@ form:
                     social_soundcloud:
                         type: text
                         label: SoundCloud ID <i class="fa fa-soundcloud"></i>
+                    social_bluesky:
+                        type: text
+                        label: Bluesky ID <i class="fa fa-cloud"></i>
+                    social_telegram:
+                        type: text
+                        label: Telegram ID <i class="fa fa-telegram"></i>
+                    social_whatsapp:
+                        type: text
+                        label: WhatsApp ID <i class="fa fa-whatsapp"></i>
+                    social_goodreads:
+                        type: text
+                        label: Goodreads ID <i class="fa fa-book-reader"></i>
+                    social_researchgate:
+                        type: text
+                        label: ResearchGate ID <i class="fa fa-flask"></i>
+                    social_wechat:
+                        type: text
+                        label: WeChat ID <i class="fa fa-weixin"></i>
+
+
 
             column2:
                 type: column
@@ -142,3 +175,22 @@ form:
                     social_orcid:
                         type: text
                         label: Orcid ID <i class="fa fa-brands fa-orcid"></i>
+
+                    social_tiktok:
+                        type: text
+                        label: TikTok ID <i class="fa fa-tiktok"></i>
+                    social_mastodon:
+                        type: text
+                        label: Mastodon ID <i class="fa fa-mastodon"></i>
+                    social_threads:
+                        type: text
+                        label: Threads ID <i class="fa fa-at"></i>
+                    social_patreon:
+                        type: text
+                        label: Patreon ID <i class="fa fa-patreon"></i>
+                    social_slack:
+                        type: text
+                        label: Slack ID <i class="fa fa-slack"></i>
+                    social_xtwitter:
+                        type: text
+                        label: X / Twitter ID <i class="fa-brands fa-x-twitter"></i>

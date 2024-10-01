@@ -20,6 +20,8 @@
 			{% block stylesheets %}
 				{% do assets.addCss('theme://css-external/font-awesome.min.css', 98) %}
 				{% do assets.addCss('theme://css-external/fluidbox.min.css', 98) %}
+				{% do assets.addCss('theme://css-compiled/custom.css', 98) %}
+
 				{% do assets.addCss('theme://css-compiled/fonts.css', 98) %}
 				{% if theme_config.blog_theme == "light" %}
 					{% do assets.addCss('theme://css-compiled/light.css', 98) %}

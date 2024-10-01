@@ -1,0 +1,21 @@
+.taxonomylist{
+  font-size:12px;
+  padding-top: 12px;
+}
+
+.hoverarrow {
+    position: relative;
+    display: inline-block;
+}
+
+.hoverarrow .arrow {
+
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, right 0.3s ease;
+}
+
+.hoverarrow:hover .arrow {
+    opacity: 1;
+    right: -25px; 
+}
