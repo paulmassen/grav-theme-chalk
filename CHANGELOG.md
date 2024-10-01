@@ -1,3 +1,9 @@
+# v0.5.0
+##  01/10/2024
+1. [](#fixed)
+    * Fixed a problem with page summary
+    * Fixed a typo in the icon section
+
 # v0.4.1
 ##  24/01/2022
 
