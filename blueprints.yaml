@@ -98,7 +98,7 @@ form:
                         label: Linkedin ID <i class="fa fa-linkedin"></i>
                     social_dribbble:
                         type: text
-                        label: Dribbble Twitter ID <i class="fa fa-dribbble"></i>
+                        label: Dribbble ID <i class="fa fa-dribbble"></i>
                     social_soundcloud:
                         type: text
                         label: SoundCloud ID <i class="fa fa-soundcloud"></i>
