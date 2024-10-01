@@ -1,5 +1,7 @@
 <nav class="header-nav {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
-	<a href="{{ home_url }}" class="header-logo" title="{{ site.title }}" {% if theme_config.header_font == "cormorant" %} style="font-family: 'Cormorant Garamond', Courier, serif;" {% endif %}>{{ site.title }}</a>
+	<a href="{{ home_url }}" class="header-logo" title="{{ site.title }}" {% if theme_config.header_font == "cormorant" %} style="font-family: 'Cormorant Garamond', Courier, serif;" {% else %} style="font-family: 'Lato', Helvetica, sans-serif;" {% endif %}>{{ site.title }}</a>
+
+
 	<ul class="header-links">
 
 		{% for p in pages.children.visible %}

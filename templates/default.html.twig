@@ -1,13 +1,13 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-        {% include 'partials/navigation.html.twig' %}
-          <section id="body">
-            <div class="wrapper padding">
-               {{ page.content | raw }}
-            </div>
-          </section>
+	{% include 'partials/navigation.html.twig' %}
+	<section id="body">
+		<div class="wrapper padding">
+			{{ page.content | raw }}
+		</div>
+	</section>
 
-{% include 'partials/footer.html.twig' %}
+	{% include 'partials/footer.html.twig' %}
 
 {% endblock %}

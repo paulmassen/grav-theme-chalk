@@ -1,67 +1,61 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 <!DOCTYPE html>
 <html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
-<head>
-{% block head %}
-    <meta charset="utf-8" />
-    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+	<head>
+		{% block head %}
+			<meta charset="utf-8"/>
+			<title>
+				{% if header.title %}
+					{{ header.title|e('html') }}
+					|
+				{% endif %}
+				{{ site.title|e('html') }}</title>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% include 'partials/metadata.html.twig' %}
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			{% include 'partials/metadata.html.twig' %}
 
-    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
-    <link rel="canonical" href="{{ page.url(true, true) }}" />
-    {% block stylesheets %}
-    {% do assets.addCss('theme://css-external/font-awesome.min.css', 98) %}
-    {% do assets.addCss('theme://css-external/fluidbox.min.css', 98) %}
-    {% do assets.addCss('theme://css-compiled/fonts.css', 98) %}
-    {% if theme_config.blog_theme == "light" %}
-        {% do assets.addCss('theme://css-compiled/light.css', 98) %}
-    {% else %}
-        {% do assets.addCss('theme://css-compiled/dark.css', 98) %}
-    {% endif %}
-    {% endblock %}
-    {{ assets.css() | raw }}
+			<link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}"/>
+			<link rel="canonical" href="{{ page.url(true, true) }}"/>
+			{% block stylesheets %}
+				{% do assets.addCss('theme://css-external/font-awesome.min.css', 98) %}
+				{% do assets.addCss('theme://css-external/fluidbox.min.css', 98) %}
+				{% do assets.addCss('theme://css-compiled/fonts.css', 98) %}
+				{% if theme_config.blog_theme == "light" %}
+					{% do assets.addCss('theme://css-compiled/light.css', 98) %}
+				{% else %}
+					{% do assets.addCss('theme://css-compiled/dark.css', 98) %}
+				{% endif %}
+			{% endblock %}
+			{{ assets.css() | raw }}
 
-{% endblock head%}
-</head>
-<body {% if page.header.body_classes %}class="{{ page.header.body_classes }}" {% endif %}>
+		{% endblock head%}
+	</head>
+	<body {% if page.header.body_classes %} class="{{ page.header.body_classes }}" {% endif %}>
 
-  <main>
-	<div class="grid grid-centered"{% if theme_config.body_width%}style="max-width: {{ theme_config.body_width }};" {% endif %}>
-      <div class="grid-cell">
-      	{% block content %}
-        {% endblock %}
-   		</div> 
-   	</div> 
-  </main>
-  
+		<main>
+			<div class="grid grid-centered" {% if theme_config.body_width%} style="max-width: {{ theme_config.body_width }};" {% endif %}>
+				<div class="grid-cell"> {% block content %}{% endblock %}
+					</div>
+				</div>
+			</main>
 
-{% block javascripts %}
-{% if theme_config.ga_analytics %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_analytics }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ site.ga_analytics }}');
-  </script>
-  
-{% endif %}
 
-   {% do assets.addJs('jquery', 108) %}
-   {% do assets.addJs('theme://js/jquery.ba-throttle-debounce.min.js', 107) %}
-   {% do assets.addJs('theme://js/vendor.js', 103) %}
-   {% do assets.addJs('theme://js/webfont.js', 102) %}
-   {% if theme_config.scrollappear_enabled %}
-     {% do assets.addJs('theme://js/scrollappear.js', 103) %}
-   {% endif %}
-   {% do assets.addJs('theme://js/jquery.fluidbox.min.js', 102) %}
-   {% do assets.addJs('theme://js/application.js', 100) %}
-    
-{% endblock %}
-{{ assets.js() | raw }}
+			{% block javascripts %}
 
-</body>
-</html>
+
+				{% do assets.addJs('jquery', 108) %}
+				{% do assets.addJs('theme://js/jquery.ba-throttle-debounce.min.js', 107) %}
+				{% do assets.addJs('theme://js/vendor.js', 103) %}
+				{% do assets.addJs('theme://js/webfont.js', 102) %}
+				{% if theme_config.scrollappear_enabled %}
+					{% do assets.addJs('theme://js/scrollappear.js', 103) %}
+				{% endif %}
+				{% do assets.addJs('theme://js/jquery.fluidbox.min.js', 102) %}
+				{% do assets.addJs('theme://js/application.js', 100) %}
+
+			{% endblock %}
+			{{ assets.js() | raw }}
+
+		</body>
+	</html>
