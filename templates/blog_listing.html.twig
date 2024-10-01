@@ -4,11 +4,9 @@
 	{% include 'partials/navigation.html.twig' %}
 	{{ page.content|raw }}
 	<ul class="article-list">
+
 		{% set collection = page.collection() %}
-		{% if collection is empty %}
-			{% set thispage = page.url(false)|e %}
-			{% set collection = page.find(thispage).children.published.order('date', 'desc') %}
-		{% endif %}
+
 		{% for article in collection %}
 			<li class="article-list-item {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
 				<a href="{{ article.url }}" title="{{ article.title }}">

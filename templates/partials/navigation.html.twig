@@ -1,287 +1,466 @@
 <nav class="header-nav {% if theme_config.scrollappear_enabled %}scrollappear{% endif %}">
-  <a href="{{ home_url }}" class="header-logo" title="{{ site.title }}" {% if theme_config.header_font == "cormorant" %} style="font-family: 'Cormorant Garamond', Courier, serif;"{% endif %}>{{ site.title }}</a>
-  <ul class="header-links">
+	<a href="{{ home_url }}" class="header-logo" title="{{ site.title }}" {% if theme_config.header_font == "cormorant" %} style="font-family: 'Cormorant Garamond', Courier, serif;" {% endif %}>{{ site.title }}</a>
+	<ul class="header-links">
 
-    {% for p in pages.children.visible %}
-        {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
-            <li>
-
-
-                <a href="{{ p.url }}" class="{{ active_page }}">
-                   {% if p.header.iconmenu %}
-              <i class="fa {{p.header.iconmenu }}"></i>
-              {% endif %} {{ p.menu }}
-                </a>
-            </li>
-    {% endfor %}
+		{% for p in pages.children.visible %}
+			{% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
+			<li>
 
 
+				<a href="{{ p.url }}" class="{{ active_page }}">
+					{% if p.header.iconmenu %}
+						<i class="fa {{p.header.iconmenu }}"></i>
+					{% endif %}
+					{{ p.menu }}
+				</a>
+			</li>
+		{% endfor %}
 
-    {% if theme_config.about_enabled == true %}
-      <li>
-        <a href="{{ 'about' | relative_url }}" title="About me">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-about">
-  <use href="{{url('theme://templates/icons/about.svg')}}#icon-about" xlink:href="{{url('theme://templates/icons/about.svg')}}#icon-about">
-          {% include 'icons/about.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_twitter %}
-      <li>
-        <a href="https://twitter.com/{{ theme_config.social_twitter }}" rel="noreferrer noopener" target="_blank" title="Twitter">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-twitter">
-  <use href="{{url('theme://templates/icons/twitter.svg')}}#icon-twitter" xlink:href="{{url('theme://templates/icons/twitter.svg')}}#icon-twitter">
-          {% include 'icons/twitter.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
+		{% if theme_config.about_enabled == true %}
+			<li>
+				<a href="{{ 'about' | relative_url }}" title="About me">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-about">
+						<use href="{{url('theme://templates/icons/about.svg')}}#icon-about" xlink:href="{{url('theme://templates/icons/about.svg')}}#icon-about">
+							{% include 'icons/about.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_tiktok %}
+			<li>
+				<a href="https://www.tiktok.com/@{{ theme_config.social_tiktok }}" rel="noreferrer noopener" target="_blank" title="TikTok">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-tiktok">
+						<use href="/user/themes/chalk/templates/icons/tiktok.svg#icon-tiktok" xlink:href="/user/themes/chalk/templates/icons/tiktok.svg#icon-tiktok"></use>
+						{% include 'icons/tiktok.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
 
-    {% endif %}
-    {% if theme_config.social_facebook %}
-      <li>
-        <a href="https://www.facebook.com/{{ theme_config.social_facebook }}" rel="noreferrer noopener" target="_blank" title="Facebook">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-facebook">
-  <use href="{{url('theme://templates/icons/facebook.svg')}}#icon-facebook" xlink:href="{{url('theme://templates/icons/facebook.svg')}}#icon-facebook">
-          {% include 'icons/facebook.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_medium %}
-      <li>
-        <a href="https://medium.com/{{ theme_config.social_medium }}" rel="noreferrer noopener" target="_blank" title="Medium">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon-medium">
-  <use href="{{url('theme://templates/icons/medium.svg')}}#icon-medium" xlink:href="{{url('theme://templates/icons/medium.svg')}}#icon-medium">
-          {% include 'icons/medium.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_github %}
-      <li>
-        <a href="https://github.com/{{ theme_config.social_github }}" rel="noreferrer noopener" target="_blank" title="GitHub">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
-  <use href="{{url('theme://templates/icons/github.svg')}}#icon-github" xlink:href="{{url('theme://templates/icons/github.svg')}}#icon-github">
-          {% include 'icons/github.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_gitlab %}
-      <li>
-        <a href="https://gitlab.com/{{ theme_config.social_gitlab }}" rel="noreferrer noopener" target="_blank" title="GitLab">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-gitlab">
-  <use href="{{url('theme://templates/icons/gitlab.svg')}}#icon-gitlab" xlink:href="{{url('theme://templates/icons/gitlab.svg')}}#icon-gitlab">
-          {% include 'icons/gitlab.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_bitbucket %}
-      <li>
-        <a href="https://bitbucket.org/{{ theme_config.social_bitbucket }}" rel="noreferrer noopener" target="_blank" title="Bitbucket">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-bitbucket">
-  <use href="{{url('theme://templates/icons/bitbucket.svg')}}#icon-bitbucket" xlink:href="{{url('theme://templates/icons/bitbucket.svg')}}#icon-bitbucket">
-          {% include 'icons/bitbucket.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_stackoverflow %}
-      <li>
-        <a href="https://stackoverflow.com/users/{{ theme_config.social_stackoverflow }}" rel="noreferrer noopener" target="_blank" title="Stack Overflow">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-stackoverflow">
-  <use href="{{url('theme://templates/icons/stackoverflow.svg')}}#icon-stackoverflow" xlink:href="{{url('theme://templates/icons/stackoverflow.svg')}}#icon-stackoverflow">
-          {% include 'icons/stackoverflow.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_keybase %}
-      <li>
-        <a href="https://keybase.io/{{ theme_config.social_keybase }}" rel="noreferrer noopener" target="_blank" title="Keybase">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-keybase">
-  <use href="{{url('theme://templates/icons/keybase.svg')}}#icon-keybase" xlink:href="{{url('theme://templates/icons/keybase.svg')}}#icon-keybase">
-          {% include 'icons/keybase.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_docker %}
-      <li>
-        <a href="https://hub.docker.com/r/{{ theme_config.social_docker }}" rel="noreferrer noopener" target="_blank" title="Docker Hub">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon-docker">
-  <use href="{{url('theme://templates/icons/docker.svg')}}#icon-docker" xlink:href="{{url('theme://templates/icons/docker.svg')}}#icon-docker">
-          {% include 'icons/docker.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_linkedin %}
-      <li>
-        <a href="https://www.linkedin.com/in/{{ theme_config.social_linkedin }}" rel="noreferrer noopener" target="_blank" title="LinkedIn">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-linkedin">
-  <use href="{{url('theme://templates/icons/linkedin.svg')}}#icon-linkedin" xlink:href="{{url('theme://templates/icons/linkedin.svg')}}#icon-linkedin">
-          {% include 'icons/linkedin.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_dribbble %}
-      <li>
-        <a href="https://dribbble.com/{{ theme_config.social_dribbble }}" rel="noreferrer noopener" target="_blank" title="Dribbble">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-dribbble">
-  <use href="{{url('theme://templates/icons/dribbble.svg')}}#icon-dribbble" xlink:href="{{url('theme://templates/icons/dribbble.svg')}}#icon-dribbble">
-          {% include 'icons/dribbble.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_flickr %}
-      <li>
-        <a href="https://www.flickr.com/photos/{{ theme_config.social_flickr }}" rel="noreferrer noopener" target="_blank" title="Flickr">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-flickr">
-  <use href="{{url('theme://templates/icons/flickr.svg')}}#icon-flickr" xlink:href="{{url('theme://templates/icons/flickr.svg')}}#icon-flickr">
-          {% include 'icons/flickr.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_instagram %}
-      <li>
-        <a href="https://instagram.com/{{ theme_config.social_instagram }}" rel="noreferrer noopener" target="_blank" title="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon-instagram">
-  <use href="{{url('theme://templates/icons/instagram.svg')}}#icon-instagram" xlink:href="{{url('theme://templates/icons/instagram.svg')}}#icon-instagram">
-          {% include 'icons/instagram.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_tumblr %}
-      <li>
-        <a href="https://{{ theme_config.social_tumblr }}.tumblr.com" rel="noreferrer noopener" target="_blank" title="Tumblr">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-tumblr">
-  <use href="{{url('theme://templates/icons/tumblr.svg')}}#icon-tumblr" xlink:href="{{url('theme://templates/icons/tumblr.svg')}}#icon-tumblr">
-          {% include 'icons/tumblr.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_spotify %}
-      <li>
-        <a href="https://play.spotify.com/user/{{ theme_config.social_spotify }}" rel="noreferrer noopener" target="_blank" title="Spotify">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-spotify">
-  <use href="{{url('theme://templates/icons/spotify.svg')}}#icon-spotify" xlink:href="{{url('theme://templates/icons/spotify.svg')}}#icon-spotify">
-          {% include 'icons/spotify.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_youtube %}
-      <li>
-        <a href="https://www.youtube.com/{{ theme_config.social_youtube }}" rel="noreferrer noopener" target="_blank" title="Youtube">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-youtube">
-  <use href="{{url('theme://templates/icons/youtube.svg')}}#icon-youtube" xlink:href="{{url('theme://templates/icons/youtube.svg')}}#icon-youtube">
-          {% include 'icons/youtube.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_soundcloud %}
-      <li>
-        <a href="https://www.soundcloud.com/{{ theme_config.social_soundcloud }}" rel="noreferrer noopener" target="_blank" title="Youtube">
-           <svg xmlns="http://www.w3.org/2000/svg" class="icon-soundcloud">
-  <use href="{{url('theme://templates/icons/soundcloud.svg')}}#icon-soundcloud" xlink:href="{{url('theme://templates/icons/soundcloud.svg')}}#icon-soundcloud">
-          {% include 'icons/soundcloud.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_twitch %}
-      <li>
-        <a href="https://www.twitch.tv/{{ theme_config.social_twitch }}" rel="noreferrer noopener" target="_blank" title="Twitch">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon-twitch">
-  <use href="{{url('theme://templates/icons/twitch.svg')}}#icon-twitch" xlink:href="{{url('theme://templates/icons/twitch.svg')}}#icon-twitch">
-          {% include 'icons/twitch.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_steam %}
-      <li>
-        <a href="https://steamcommunity.com/id/{{ theme_config.social_steam }}" rel="noreferrer noopener" target="_blank" title="Steam">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon-steam">
-  <use href="{{url('theme://templates/icons/steam.svg')}}#icon-steam" xlink:href="{{url('theme://templates/icons/steam.svg')}}#icon-steam">
-          {% include 'icons/steam.svg' %}
-        </use>
-    </svg>
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_discord %}
-      <li>
-        <a href="https://discord.gg/{{ theme_config.social_discord }}" rel="noreferrer noopener" target="_blank" title="Discord Server">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon-discord">
-            <use href="{{url('theme://templates/icons/discord.svg')}}#icon-discord" xlink:href="{{url('theme://templates/icons/discord.svg')}}#icon-discord">
-          {% include 'icons/discord.svg' %}
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_bitcoin %}
-      <li>
-        <a href="https://blockexplorer.com/address/{{ theme_config.social_bitcoin }}" rel="noreferrer noopener" target="_blank" title="Bitcoin">
-             <svg xmlns="http://www.w3.org/2000/svg" class="icon-bitcoin">
-            <use href="{{url('theme://templates/icons/bitcoin.svg')}}#icon-bitcoin" xlink:href="{{url('theme://templates/icons/bitcoin.svg')}}#icon-bitcoin">
-          {% include 'icons/bitcoin.svg' %}
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_ethereum %}
-      <li>
-        <a href="https://etherscan.io/address/{{ theme_config.social_ethereum }}" rel="noreferrer noopener" target="_blank" title="Ethereum">
-             <svg xmlns="http://www.w3.org/2000/svg" class="icon-ethereum">
-            <use href="{{url('theme://templates/icons/ethereum.svg')}}#icon-ethereum" xlink:href="{{url('theme://templates/icons/ethereum.svg')}}#icon-ethereum">
-          {% include 'icons/ethereum.svg' %}
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.social_email %}
-      <li>
-        <a href="mailto:{{ theme_config.social_email }}" title="Email">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
-            <use href="{{url('theme://templates/icons/email.svg')}}#icon-email" xlink:href="{{url('theme://templates/icons/email.svg')}}#icon-email">
-          {% include 'icons/email.svg' %}
-        </a>
-      </li>
-    {% endif %}
-    {% if theme_config.rss_enabled == true %}
-      <li>
-        <a href="{{ 'feed.xml' | relative_url }}" rel="noreferrer noopener" target="_blank" title="RSS">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
-            <use href="{{url('theme://templates/icons/rss.svg')}}#icon-rss" xlink:href="{{url('theme://templates/icons/rss.svg')}}#icon-rss">
-          {% include 'icons/rss.svg' %}
-        </a>
-      </li>
-    {% endif %}
-  </ul>
+		{% if theme_config.social_mastodon %}
+			<li>
+				<a href="{{ theme_config.social_mastodon }}" rel="noreferrer noopener" target="_blank" title="Mastodon">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-mastodon">
+						<use href="/user/themes/chalk/templates/icons/mastodon.svg#icon-mastodon" xlink:href="/user/themes/chalk/templates/icons/mastodon.svg#icon-mastodon"></use>
+						{% include 'icons/mastodon.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_threads %}
+			<li>
+				<a href="https://www.threads.net/@{{ theme_config.social_threads }}" rel="noreferrer noopener" target="_blank" title="Threads">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-threads">
+						<use href="/user/themes/chalk/templates/icons/threads.svg#icon-threads" xlink:href="/user/themes/chalk/templates/icons/threads.svg#icon-threads"></use>
+						{% include 'icons/threads.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_kofi %}
+			<li>
+				<a href="https://ko-fi.com/{{ theme_config.social_kofi }}" rel="noreferrer noopener" target="_blank" title="Ko-fi">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-kofi">
+						<use href="/user/themes/chalk/templates/icons/kofi.svg#icon-kofi" xlink:href="/user/themes/chalk/templates/icons/kofi.svg#icon-kofi"></use>
+						{% include 'icons/ko-fi.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_patreon %}
+			<li>
+				<a href="https://www.patreon.com/{{ theme_config.social_patreon }}" rel="noreferrer noopener" target="_blank" title="Patreon">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-patreon">
+						<use href="/user/themes/chalk/templates/icons/patreon.svg#icon-patreon" xlink:href="/user/themes/chalk/templates/icons/patreon.svg#icon-patreon"></use>
+						{% include 'icons/patreon.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+
+		{% if theme_config.social_bluesky %}
+			<li>
+				<a href="https://bsky.app/profile/{{ theme_config.social_bluesky }}" rel="noreferrer noopener" target="_blank" title="Bluesky">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-bluesky">
+						<use href="/user/themes/chalk/templates/icons/bluesky.svg#icon-bluesky" xlink:href="/user/themes/chalk/templates/icons/bluesky.svg#icon-bluesky"></use>
+						{% include 'icons/bluesky.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_telegram %}
+			<li>
+				<a href="https://t.me/{{ theme_config.social_telegram }}" rel="noreferrer noopener" target="_blank" title="Telegram">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-telegram">
+						<use href="/user/themes/chalk/templates/icons/telegram.svg#icon-telegram" xlink:href="/user/themes/chalk/templates/icons/telegram.svg#icon-telegram"></use>
+						{% include 'icons/telegram.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_whatsapp %}
+			<li>
+				<a href="https://wa.me/{{ theme_config.social_whatsapp }}" rel="noreferrer noopener" target="_blank" title="WhatsApp">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-whatsapp">
+						<use href="/user/themes/chalk/templates/icons/whatsapp.svg#icon-whatsapp" xlink:href="/user/themes/chalk/templates/icons/whatsapp.svg#icon-whatsapp"></use>
+						{% include 'icons/whatsapp.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_goodreads %}
+			<li>
+				<a href="https://www.goodreads.com/user/show/{{ theme_config.social_goodreads }}" rel="noreferrer noopener" target="_blank" title="Goodreads">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-goodreads">
+						<use href="/user/themes/chalk/templates/icons/goodreads.svg#icon-goodreads" xlink:href="/user/themes/chalk/templates/icons/goodreads.svg#icon-goodreads"></use>
+						{% include 'icons/goodreads.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_researchgate %}
+			<li>
+				<a href="https://www.researchgate.net/profile/{{ theme_config.social_researchgate }}" rel="noreferrer noopener" target="_blank" title="ResearchGate">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-researchgate">
+						<use href="/user/themes/chalk/templates/icons/researchgate.svg#icon-researchgate" xlink:href="/user/themes/chalk/templates/icons/researchgate.svg#icon-researchgate"></use>
+						{% include 'icons/researchgate.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_wechat %}
+			<li>
+				<a href="#" rel="noreferrer noopener" target="_blank" title="WeChat: {{ theme_config.social_wechat }}">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-wechat">
+						<use href="/user/themes/chalk/templates/icons/wechat.svg#icon-wechat" xlink:href="/user/themes/chalk/templates/icons/wechat.svg#icon-wechat"></use>
+						{% include 'icons/wechat.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_slack %}
+			<li>
+				<a href="{{ theme_config.social_slack }}" rel="noreferrer noopener" target="_blank" title="Slack">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-slack">
+						<use href="/user/themes/chalk/templates/icons/slack.svg#icon-slack" xlink:href="/user/themes/chalk/templates/icons/slack.svg#icon-slack"></use>
+						{% include 'icons/slack.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+
+		{% if theme_config.social_twitter %}
+			<li>
+				<a href="https://twitter.com/{{ theme_config.social_twitter }}" rel="noreferrer noopener" target="_blank" title="Twitter">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-twitter">
+						<use href="{{url('theme://templates/icons/twitter.svg')}}#icon-twitter" xlink:href="{{url('theme://templates/icons/twitter.svg')}}#icon-twitter">
+							{% include 'icons/twitter.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+
+		{% endif %}
+		{% if theme_config.social_facebook %}
+			<li>
+				<a href="https://www.facebook.com/{{ theme_config.social_facebook }}" rel="noreferrer noopener" target="_blank" title="Facebook">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-facebook">
+						<use href="{{url('theme://templates/icons/facebook.svg')}}#icon-facebook" xlink:href="{{url('theme://templates/icons/facebook.svg')}}#icon-facebook">
+							{% include 'icons/facebook.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_medium %}
+			<li>
+				<a href="https://medium.com/{{ theme_config.social_medium }}" rel="noreferrer noopener" target="_blank" title="Medium">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-medium">
+						<use href="{{url('theme://templates/icons/medium.svg')}}#icon-medium" xlink:href="{{url('theme://templates/icons/medium.svg')}}#icon-medium">
+							{% include 'icons/medium.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_xtwitter %}
+			<li>
+				<a href="https://x.com/{{ theme_config.social_xtwitter }}" rel="noreferrer noopener" target="_blank" title="X (Twitter)">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-xtwitter">
+						<use href="/user/themes/chalk/templates/icons/xtwitter.svg#icon-xtwitter" xlink:href="/user/themes/chalk/templates/icons/xtwitter.svg#icon-xtwitter"></use>
+						{% include 'icons/xtwitter.svg' %}
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+
+		{% if theme_config.social_github %}
+			<li>
+				<a href="https://github.com/{{ theme_config.social_github }}" rel="noreferrer noopener" target="_blank" title="GitHub">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+						<use href="{{url('theme://templates/icons/github.svg')}}#icon-github" xlink:href="{{url('theme://templates/icons/github.svg')}}#icon-github">
+							{% include 'icons/github.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_gitlab %}
+			<li>
+				<a href="https://gitlab.com/{{ theme_config.social_gitlab }}" rel="noreferrer noopener" target="_blank" title="GitLab">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-gitlab">
+						<use href="{{url('theme://templates/icons/gitlab.svg')}}#icon-gitlab" xlink:href="{{url('theme://templates/icons/gitlab.svg')}}#icon-gitlab">
+							{% include 'icons/gitlab.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_bitbucket %}
+			<li>
+				<a href="https://bitbucket.org/{{ theme_config.social_bitbucket }}" rel="noreferrer noopener" target="_blank" title="Bitbucket">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-bitbucket">
+						<use href="{{url('theme://templates/icons/bitbucket.svg')}}#icon-bitbucket" xlink:href="{{url('theme://templates/icons/bitbucket.svg')}}#icon-bitbucket">
+							{% include 'icons/bitbucket.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_stackoverflow %}
+			<li>
+				<a href="https://stackoverflow.com/users/{{ theme_config.social_stackoverflow }}" rel="noreferrer noopener" target="_blank" title="Stack Overflow">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-stackoverflow">
+						<use href="{{url('theme://templates/icons/stackoverflow.svg')}}#icon-stackoverflow" xlink:href="{{url('theme://templates/icons/stackoverflow.svg')}}#icon-stackoverflow">
+							{% include 'icons/stackoverflow.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_keybase %}
+			<li>
+				<a href="https://keybase.io/{{ theme_config.social_keybase }}" rel="noreferrer noopener" target="_blank" title="Keybase">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-keybase">
+						<use href="{{url('theme://templates/icons/keybase.svg')}}#icon-keybase" xlink:href="{{url('theme://templates/icons/keybase.svg')}}#icon-keybase">
+							{% include 'icons/keybase.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_docker %}
+			<li>
+				<a href="https://hub.docker.com/r/{{ theme_config.social_docker }}" rel="noreferrer noopener" target="_blank" title="Docker Hub">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-docker">
+						<use href="{{url('theme://templates/icons/docker.svg')}}#icon-docker" xlink:href="{{url('theme://templates/icons/docker.svg')}}#icon-docker">
+							{% include 'icons/docker.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_linkedin %}
+			<li>
+				<a href="https://www.linkedin.com/in/{{ theme_config.social_linkedin }}" rel="noreferrer noopener" target="_blank" title="LinkedIn">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-linkedin">
+						<use href="{{url('theme://templates/icons/linkedin.svg')}}#icon-linkedin" xlink:href="{{url('theme://templates/icons/linkedin.svg')}}#icon-linkedin">
+							{% include 'icons/linkedin.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_dribbble %}
+			<li>
+				<a href="https://dribbble.com/{{ theme_config.social_dribbble }}" rel="noreferrer noopener" target="_blank" title="Dribbble">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-dribbble">
+						<use href="{{url('theme://templates/icons/dribbble.svg')}}#icon-dribbble" xlink:href="{{url('theme://templates/icons/dribbble.svg')}}#icon-dribbble">
+							{% include 'icons/dribbble.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_flickr %}
+			<li>
+				<a href="https://www.flickr.com/photos/{{ theme_config.social_flickr }}" rel="noreferrer noopener" target="_blank" title="Flickr">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-flickr">
+						<use href="{{url('theme://templates/icons/flickr.svg')}}#icon-flickr" xlink:href="{{url('theme://templates/icons/flickr.svg')}}#icon-flickr">
+							{% include 'icons/flickr.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_instagram %}
+			<li>
+				<a href="https://instagram.com/{{ theme_config.social_instagram }}" rel="noreferrer noopener" target="_blank" title="Instagram">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-instagram">
+						<use href="{{url('theme://templates/icons/instagram.svg')}}#icon-instagram" xlink:href="{{url('theme://templates/icons/instagram.svg')}}#icon-instagram">
+							{% include 'icons/instagram.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_tumblr %}
+			<li>
+				<a href="https://{{ theme_config.social_tumblr }}.tumblr.com" rel="noreferrer noopener" target="_blank" title="Tumblr">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-tumblr">
+						<use href="{{url('theme://templates/icons/tumblr.svg')}}#icon-tumblr" xlink:href="{{url('theme://templates/icons/tumblr.svg')}}#icon-tumblr">
+							{% include 'icons/tumblr.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_spotify %}
+			<li>
+				<a href="https://play.spotify.com/user/{{ theme_config.social_spotify }}" rel="noreferrer noopener" target="_blank" title="Spotify">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-spotify">
+						<use href="{{url('theme://templates/icons/spotify.svg')}}#icon-spotify" xlink:href="{{url('theme://templates/icons/spotify.svg')}}#icon-spotify">
+							{% include 'icons/spotify.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_youtube %}
+			<li>
+				<a href="https://www.youtube.com/{{ theme_config.social_youtube }}" rel="noreferrer noopener" target="_blank" title="Youtube">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-youtube">
+						<use href="{{url('theme://templates/icons/youtube.svg')}}#icon-youtube" xlink:href="{{url('theme://templates/icons/youtube.svg')}}#icon-youtube">
+							{% include 'icons/youtube.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_soundcloud %}
+			<li>
+				<a href="https://www.soundcloud.com/{{ theme_config.social_soundcloud }}" rel="noreferrer noopener" target="_blank" title="Soundcloud">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-soundcloud">
+						<use href="{{url('theme://templates/icons/soundcloud.svg')}}#icon-soundcloud" xlink:href="{{url('theme://templates/icons/soundcloud.svg')}}#icon-soundcloud"></use>
+
+						{% include 'icons/soundcloud.svg' %}
+
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+		{% if theme_config.social_orcid %}
+
+			<li>
+				<a href="https://orcid.org/test etetetetet" rel="noreferrer noopener" target="_blank" title="Orcid">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-orcid">
+						<use href="/user/themes/chalk/templates/icons/orcid.svg#icon-orcid" xlink:href="/user/themes/chalk/templates/icons/orcid.svg#icon-orcid"></use>
+						{% include 'icons/orcid.svg' %}
+
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+
+
+		{% if theme_config.social_twitch %}
+			<li>
+				<a href="https://www.twitch.tv/{{ theme_config.social_twitch }}" rel="noreferrer noopener" target="_blank" title="Twitch">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-twitch">
+						<use href="{{url('theme://templates/icons/twitch.svg')}}#icon-twitch" xlink:href="{{url('theme://templates/icons/twitch.svg')}}#icon-twitch">
+							{% include 'icons/twitch.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_steam %}
+			<li>
+				<a href="https://steamcommunity.com/id/{{ theme_config.social_steam }}" rel="noreferrer noopener" target="_blank" title="Steam">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-steam">
+						<use href="{{url('theme://templates/icons/steam.svg')}}#icon-steam" xlink:href="{{url('theme://templates/icons/steam.svg')}}#icon-steam">
+							{% include 'icons/steam.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_discord %}
+			<li>
+				<a href="https://discord.gg/{{ theme_config.social_discord }}" rel="noreferrer noopener" target="_blank" title="Discord Server">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-discord">
+						<use href="{{url('theme://templates/icons/discord.svg')}}#icon-discord" xlink:href="{{url('theme://templates/icons/discord.svg')}}#icon-discord">
+							{% include 'icons/discord.svg' %}
+						</use>
+					</svg>
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_bitcoin %}
+			<li>
+				<a href="https://blockexplorer.com/address/{{ theme_config.social_bitcoin }}" rel="noreferrer noopener" target="_blank" title="Bitcoin">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-bitcoin">
+						<use href="{{url('theme://templates/icons/bitcoin.svg')}}#icon-bitcoin" xlink:href="{{url('theme://templates/icons/bitcoin.svg')}}#icon-bitcoin">
+							{% include 'icons/bitcoin.svg' %}
+						</use>
+					</svg>
+
+				</a>
+			</li>
+		{% endif %}
+
+
+		{% if theme_config.social_ethereum %}
+			<li>
+				<a href="https://etherscan.io/address/{{ theme_config.social_ethereum }}" rel="noreferrer noopener" target="_blank" title="Ethereum">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-ethereum">
+						<use href="{{url('theme://templates/icons/ethereum.svg')}}#icon-ethereum" xlink:href="{{url('theme://templates/icons/ethereum.svg')}}#icon-ethereum">
+							{% include 'icons/ethereum.svg' %}
+						</use>
+					</svg>
+
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.social_email %}
+			<li>
+				<a href="mailto:{{ theme_config.social_email }}" title="Email">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
+						<use href="{{url('theme://templates/icons/email.svg')}}#icon-email" xlink:href="{{url('theme://templates/icons/email.svg')}}#icon-email">
+							{% include 'icons/email.svg' %}
+						</use>
+					</svg>
+
+				</a>
+			</li>
+		{% endif %}
+		{% if theme_config.rss_enabled == true %}
+			<li>
+				<a href="{{ base_url }}.rss" rel="noreferrer noopener" target="_blank" title="RSS">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+						<use href="{{url('theme://templates/icons/rss.svg')}}#icon-rss" xlink:href="{{url('theme://templates/icons/rss.svg')}}#icon-rss">
+							{% include 'icons/rss.svg' %}
+						</use>
+					</svg>
+
+				</a>
+			</li>
+		{% endif %}
+
+	</ul>
+
 </nav>
