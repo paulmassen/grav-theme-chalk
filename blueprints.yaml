@@ -139,3 +139,6 @@ form:
                     social_tumblr:
                         type: text
                         label: Tumblr ID <i class="fa fa-tumblr"></i>
+                    social_orcid:
+                        type: text
+                        label: Orcid ID <i class="fa fa-brands fa-orcid"></i>
