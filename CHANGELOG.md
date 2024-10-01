@@ -5,8 +5,8 @@
     * Fixed a typo in the icon section
     * Added several new icons
     * Fixed some unclosed tags
-    * Added a default collection for when the collection has not been set by the user
     * Fixed a problem with the font for header
+    * General improvements and bugfixes
 
 # v0.4.1
 ##  24/01/2022
