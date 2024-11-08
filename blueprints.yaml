@@ -166,6 +166,9 @@ form:
                     social_flickr:
                         type: text
                         label: Flickr ID <i class="fa fa-flicker"></i>
+                    social_imdb:
+                        type: text
+                        label: IMDB ID <i class="fa fa-imdb"></i>
                     social_instagram:
                         type: text
                         label: Instagram ID <i class="fa fa-instagram"></i>
